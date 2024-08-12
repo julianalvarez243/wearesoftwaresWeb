@@ -256,19 +256,14 @@ form {
 .enProceso {
     margin: 0 auto;
     text-align: center;
-    margin-bottom: 50px;
 }
 
 .enProceso{
     font-size: 1.3vw;
 }
 
-.enProceso h2 {
-    margin-top: -20px;
-}
-
 .enProceso img {
-    width: 30vw;
+    width: 20vw;
 }
 
 .countdown {
