@@ -1,0 +1,221 @@
+body {
+    font-family: "Roboto Mono", monospace;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    margin-top: 0.5vw;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+}
+
+.navbar ul li a:hover {
+    background-color: #8457da;
+    border-radius: 10px;
+    transition: 0.6s;
+    color: white;
+}
+
+.navbar .logoNav img{
+    max-width: 15vw;
+}
+
+.navbar .menuNav {
+    margin: 0 auto;
+    margin-top: 1.7vw;
+}
+
+.navbar .menuNav ul li {
+    list-style: none;
+    display: inline;
+    padding-right: 10vw;
+}
+
+.main {
+    display: flex;
+    padding-left: 13px;
+    padding-right: 13px;
+    height: auto;
+}
+
+.main .textMain {
+    width: 50vw;
+    height: 20vw;
+    margin-top: 8vw;
+    font-size: 1.5vw;
+}
+
+.main .imgMain img {
+    width: 38vw;
+    margin-left: 8vw;
+}
+
+.footer {
+    background-color: #8457da;
+    position: relative;
+    min-height: 30vw;
+
+}
+
+.footer .redes {
+    width: 50vw;
+}
+
+
+.footer .redes ul li {
+    list-style: none;
+}
+
+
+.footer .redes ul li a:hover {
+    color: white;
+    transition: 0.6s;
+}
+
+
+.copyright {
+    text-align: center;
+
+}
+
+/*Contacto html*/
+
+.footer .contactoForm {
+    margin-right: 10vw;
+    width: 45vw;
+}
+.contactoForm {
+    width: 45vw;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    bottom: 0px;
+}
+
+.form-left, .form-right {
+    width: 20vw;
+    margin-top: 5vw;
+}
+
+
+.form-left input, .form-right input, 
+.form-right textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-submit {
+    width: 100%;
+    text-align: right;
+}
+
+.form-submit input[type="submit"] {
+    padding: 10px 20px;
+    
+    background-color: #5e17eb;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-submit input[type="submit"]:hover {
+    background-color: #000000;
+    transition: 0.7s;
+} 
+
+.contactaTitulo {
+    text-align: center;
+    margin-bottom: -10px;
+}
+
+/*Servicios html*/
+
+.servicios h1{
+    text-align: center;
+}
+
+.cards {
+    text-align: justify;
+    margin-top: 5vw;
+}
+
+.titleCard1 {
+    margin-left: 2vw;
+}
+
+.card1 {
+    display: flex;
+    margin-top: -20px;
+}
+
+.card1 p {
+    height: 30vw;
+    margin-left: 2vw;
+    width: 45vw;
+}
+
+.card1 img {
+    width: 35vw;
+    margin-top: -70px;
+    margin-left: 12vw;
+}
+
+
+.card2 {
+    display: flex;
+    margin-top: -20px;
+}
+
+.titleCard2  {
+    text-align: right;
+    margin-bottom: 40px;
+    margin-left: 2vw;
+}
+
+.card2 p {
+    height: 30vw;
+    width: 45vw;
+    margin-left: 2vw;
+}
+
+.card2 img {
+    width: 35vw;
+    margin-top: -220px;
+    margin-right: 12vw;
+}
+
+.titleCard3 {
+    margin-top: -8vw;
+    margin-left: 2vw;
+}
+
+.card3 {
+    display: flex;
+    margin-top: -20px;
+}
+
+.card3 p {
+    height: 30vw;
+    width: 45vw;
+    margin-left: 2vw;
+}
+
+.card3 img {
+    width: 35vw;
+    margin-top: -70px;
+    margin-left: 12vw;
+}
