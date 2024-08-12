@@ -263,10 +263,12 @@ form {
     font-size: 1.3vw;
 }
 
+.enProceso h2 {
+    margin-top: -20px;
+}
 
 .enProceso img {
     width: 30vw;
-
 }
 
 .countdown {
