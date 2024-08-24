@@ -3,43 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WeAre</title>
-    <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
-    <link rel="stylesheet" href="assets/style.css">
+    <title>WeAre - Countdown</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <nav>
-        <div class="navbar">
-            <div class="logoNav">
-                <img src="img/logoNormal.png" alt="Logo WeAre">
-            </div>
-
-            <div class="menuNav">
-                <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Nosotros</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Contacto</a></li>
-                </ul>
-            </div>
+    <div class="card">
+      <div class="portada" id="portada">
+        <div class="header">
+            <img class="logo-img" src="/img/logoNormalSinFondo.png" alt="logo-WeAreSoftwares">
+            <h1 class="logotipo">WeAre Softwares</h1>
+            <p class="mensaje">Fecha lanzamiento</p>
         </div>
-    </nav>
 
-    <main>
-        <div class="main">
-           <div class="enProceso">
-            <img src="img/imgEnProceso.svg" alt="">
-                <h2>
-                    Estamos preparándonos para el lanzamiento.
-                </h2>
-                <p>Siguenos en <a target="_blank" href="https://www.linkedin.com/company/weare-softwares/">Linkedin</a> para no perderte ninguna noticia.</p>
-                <div class="countdown" id="countdown"></div>
-
-           </div>
+        <div id="cuenta">
+            <!-- Bloques del contador se llenan con JavaScript -->
         </div>
-    </main>
+      <div class="heading">Síguenos en LinkedIn para no perderte ninguna noticia</div>
+      <div class="icons">
+<button class="Btn">
+  <svg
+    viewBox="0 0 16 16"
+    height="16"
+    width="16"
+    xmlns="http://www.w3.org/2000/svg"
+    class="svgIcon"
+  >
+    <path
+      d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+    ></path>
+  </svg>
+  <span class="text"><a href="https://www.linkedin.com/company/weare-softwares">LinkedIn</a></span>
+</button>
 
+    </div>
+    
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <script src="js/simplyCountdown.min.js"></script>
+    <script src="js/countdown.js"></script>
     <script>
         class Countdown {
             constructor(targetDate, elementId) {
@@ -53,18 +54,33 @@
                     const now = new Date().getTime();
                     const distance = this.targetDate - now;
 
+                    if (distance < 0) {
+                        clearInterval(this.interval);
+                        this.element.innerHTML = `
+                            <div class='contador-bloque'><div class='valor'>00</div><div class='unidad'>d</div></div>
+                            <div class='contador-bloque'><div class='valor'>00</div><div class='unidad'>h</div></div>
+                            <div class='contador-bloque'><div class='valor'>00</div><div class='unidad'>m</div></div>
+                            <div class='contador-bloque'><div class='valor'>00</div><div class='unidad'>s</div></div>
+                        `;
+                        return;
+                    }
 
                     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                    this.element.textContent = `${days}d | ${hours}h | ${minutes}m`;
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    this.element.innerHTML = `
+                        <div class='contador-bloque'><div class='valor'>${days}</div><div class='unidad'>d</div></div>
+                        <div class='contador-bloque'><div class='valor'>${hours}</div><div class='unidad'>h</div></div>
+                        <div class='contador-bloque'><div class='valor'>${minutes}</div><div class='unidad'>m</div></div>
+                        <div class='contador-bloque'><div class='valor'>${seconds}</div><div class='unidad'>s</div></div>
+                    `;
                 }, 1000);
             }
         }
 
-        // creo la instancia de la clase Countdown para el 16 de septiembre a las 00:00 horas
-        new Countdown('September 16, 2024 00:00:00', 'countdown');
+        new Countdown('September 16, 2024 00:00:00', 'cuenta');
     </script>
-
 </body>
 </html>
