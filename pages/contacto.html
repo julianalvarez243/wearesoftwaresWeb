@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WeAre</title>
     <link rel="shortcut icon" href="../img/logo.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="../assets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
 </head>
 <body>
     <nav>
         <div class="navbar">
             <div class="logoNav">
-                <img src="./img/logoNormal.png" alt="Logo WeAre">
+                <img src="../img/logoNormal.png" alt="Logo WeAre">
             </div>
 
             <button class="menu-toggle" aria-label="Abrir menú">
@@ -27,33 +26,53 @@
                 </button>
                 <ul>
                     <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="pages/nosotros.html">Nosotros</a></li>
-                    <li><a href="pages/servicios.html">Servicios</a></li>
-                    <li><a href="pages/contacto.html">Contacto</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <main>
-        <div class="main index">
-            <div class="textMain">
-                <h1>Desarrollamos la necesidad de tu negocio</h1>
-                <p class="p-main-index">Nuestro compromiso es ayudarte a alcanzar tus metas mediante un enfoque integral y soluciones a medida. 
-                Aprovechamos la tecnología y nuestra experiencia para optimizar tus procesos, aumentar tu visibilidad y mejorar la eficiencia de tu negocio. 
-                Descubre cómo podemos hacer realidad tus objetivos empresariales con estrategias diseñadas para el éxito.</p>
-            </div>
-            
-            <div class="imgMain">
-                <img src="img/imgMain.svg" alt="Ilustracion grafica de cliente">
-            </div>
-            <a href="https://wa.me/message/2NBDD7EORZQVL1" class="whatsapp-button" target="_blank" title="Contáctanos por WhatsApp">
-                <img class="img-wsp" src="img/whatsAppIcon.be7b0268fb40c767fbbd (2).svg" alt="">
-            </a>
-            
+<div id="Container">
+<form action="#" method="POST" class="form" id="contactForm">
+        <div class="title">Bienvenido/a</div>
+        <div class="subtitle">Contactate con nosotros</div>
+  
+        <div class="input-container ic1">
+          <input placeholder="" type="text" class="input" name="Nombre y apellido" id="Nombre y apellido">
+          <div class="cut name-cut"></div>
+          <label class="iLabel" for="firstname">Nombre y apellido</label>
         </div>
+  
+        <div class="input-container ic2">
+          <input placeholder="" type="tel" class="input" id="Número de teléfono" name="Número de teléfono">
+          <div class="cut"></div>
+          <label class="iLabel" for="nro de telefono">Numero de teléfono</label>
+        </div>    
+        <div class="input-container ic2">
+          <input placeholder="" type="text" class="input" id="Email" name="Email">
+          <div class="cut cut-short"></div>
+          <label class="iLabel" for="email">Email</label>
+        </div>
+        <div class="input-container ic2">
+            <input placeholder="" type="text" class="input" id="Mensaje" name="Mensaje">
+            <div class="cut msj-cut"></div>
+            <label class="iLabel" for="msj">Mensaje</label>
+        </div>
+        <button class="submit" type="submit">Enviar</button>
+</form>
+
+    
+
+    <a href="https://wa.me/message/2NBDD7EORZQVL1" class="whatsapp-button" target="_blank" title="Contáctanos por WhatsApp">
+      <img class="img-wsp" src="../img/whatsAppIcon.be7b0268fb40c767fbbd (2).svg" alt="">
+     </a>
+
     </main>
     
+
     <footer>
       <div class="footer footercontact">
           <div class="footer-container">
@@ -88,15 +107,15 @@
               <div class="footer-section contact">
                   <h4>Contacto</h4>
                   <p>Email: contacto@wearesoftwares.com</p>
-                  <p>Tel: +549 2477678343</p>
+                  <p>Tel:+123 456 7890</p>
               </div>
               <div class="footer-section copyright">
-                  <h4>Menu</h4>
-                  <ul>
-                    <li><a href="pages/nosotros.html">Nosotros</a></li>
-                    <li><a href="pages/servicios.html">Servicios</a></li>
-                    <li><a href="pages/contacto.html">Contacto</a></li>
-                    <li><a href="tyc.html">Términos y condiciones</a></li>
+                <h4>Menu</h4>
+                <ul>
+                  <li><a href="../index.html">Inicio</a></li>
+                  <li><a href="../pages/nosotros.html">Nosotros</a></li>
+                    <li><a href="../pages/servicios.html">Servicios</a></li>
+                    <li><a href="../tyc.html">Términos y condiciones</a></li>
                   </ul>
               </div>
           </div>
@@ -106,7 +125,67 @@
       </div>
   </footer>
 
-    <script src="js/script.js"></script> <!-- Enlace al archivo JS -->
+    <script> window.addEventListener('load', () => {
+        const imgMain = document.querySelector('.imgMain');
+        imgMain.classList.add('visible');
+    });
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuNav = document.querySelector('.menuNav');
+        const closeMenu = document.querySelector('.close-menu');
+    
+        menuToggle.addEventListener('click', function() {
+            menuNav.classList.add('active');
+            menuToggle.classList.add('active');
+        });
+    
+        closeMenu.addEventListener('click', function() {
+            menuNav.classList.remove('active');
+            menuToggle.classList.remove('active');
+        });
+    });
 
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+  // Obtener los valores de los campos
+  const email = document.getElementById('Email').value;
+  const message = document.getElementById('Mensaje').value;
+  const phone = document.getElementById('Número de teléfono').value;
+  const name = document.getElementById('Nombre y apellido').value; // Obtener el valor del nombre y apellido
+
+  // Validar que el nombre y apellido no esté vacío
+  if (!name.trim()) {
+    alert('Por favor, ingresa tu nombre y apellido.');
+    event.preventDefault(); // Evita el envío del formulario
+    return;
+  }
+
+  // Validar número de teléfono (formato global)
+  const phonePattern = /^\+?\d{1,4}?[\s.-]?\(?\d{1,4}?\)?[\s.-]?\d{1,4}[\s.-]?\d{1,9}$/;
+  if (!phonePattern.test(phone)) {
+    alert('Por favor, ingresa un número de teléfono válido.');
+    event.preventDefault(); // Evita el envío del formulario
+    return;
+  }
+
+  // Validar email
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    alert('Por favor, ingresa un email válido.');
+    event.preventDefault(); // Evita el envío del formulario
+    return;
+  }
+
+
+  // Validar que el mensaje tenga al menos 10 palabras
+  const wordCount = message.trim().split(/\s+/).length;
+  if (wordCount < 5) {
+    alert('El mensaje debe contener al menos 5 palabras.');
+    event.preventDefault(); // Evita el envío del formulario
+    return;
+  }
+});
+
+    </script>
 </body>
 </html>
